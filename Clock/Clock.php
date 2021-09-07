@@ -16,7 +16,7 @@ class Clock
      * @param int $minutes
      * @param int $secondes
      */
-    public function __construct(int $hour, int $minutes, int $secondes)
+    public function __construct(int $hour = 0, int $minutes = 0, int $secondes = 0)
     {
         $this->hours = $hour;
         $this->minutes = $minutes;
