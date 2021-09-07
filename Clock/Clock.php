@@ -80,8 +80,10 @@ class Clock
         $seconds++;
 
         if ($seconds === 60) {
+            $seconds = 0;
             $minutes++;
             if ($minutes === 60) {
+                $minutes = 0;
                 $hours++;
                 if ($hours === 24) {
                     $seconds = $minutes = $hours = 0;
@@ -121,14 +123,16 @@ class Clock
     {
         if ($hour < 0 || $hour >= 24 || $minutes < 0 || $minutes >= 60 || $secondes < 0 || $secondes >= 60) {
             echo "Erreur, l'horaire spécifiée n'est pas valide. <br>";
+            return 0;
         } else {
             return 1;
         }
     }
 
-    private function format($nb){
-        if ($nb < 10){
-            return "0".$nb;
+    private function format($nb)
+    {
+        if ($nb < 10) {
+            return "0" . $nb;
         }
         return $nb;
     }
