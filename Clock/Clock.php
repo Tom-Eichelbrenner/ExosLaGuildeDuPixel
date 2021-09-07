@@ -96,7 +96,7 @@ class Clock
 
     }
 
-    public function setTime(int $hour, int $minutes, int $secondes)
+    public function setTime(int $hour = 0, int $minutes = 0, int $secondes = 0)
     {
         if ($this->verify($hour, $minutes, $secondes) === 1) {
             $this->setHours($hour);
